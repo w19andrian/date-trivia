@@ -1,0 +1,3 @@
+.helmignore
+venv-date-trivia
+venv-date-trivia/*
