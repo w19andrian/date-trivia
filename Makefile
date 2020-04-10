@@ -43,9 +43,9 @@ prod:
 					./date-trivia
 
 clean:
-	$(HELM) delete --purge trivia-devel
-	$(HELM) delete --purge trivia
-	$(DOCKER) rmi -f ${PKG_NAME}-backend:dev
-	$(DOCKER) rmi -f ${PKG_NAME}-frontend:dev
-	$(DOCKER) rmi -f ${PKG_NAME}-backend:${PKG_VERSION}
-	$(DOCKER) rmi -f ${PKG_NAME}-frontend:${PKG_VERSION}
+	@-$(HELM) delete --purge trivia-devel
+	@-$(HELM) delete --purge trivia
+	@-$(DOCKER) rmi -f ${PKG_NAME}-backend:dev
+	@-$(DOCKER) rmi -f ${PKG_NAME}-frontend:dev
+	@-$(DOCKER) rmi -f ${PKG_NAME}-backend:${PKG_VERSION}
+	@-$(DOCKER) rmi -f ${PKG_NAME}-frontend:${PKG_VERSION}
