@@ -17,7 +17,7 @@ git clone https://github.com/w19andrian/date-trivia.git
 cd date-trivia
 make all
 ```
-The above commands will clone the repository, build docker images, and then deploy the chart for both `development` and `production` environment. By default, the frontend services are exposed via `NodePort`
+The above commands will clone the repository, build docker images, and then deploy the chart for both `development` and `production` packages. By default, the frontend services are exposed via `NodePort`
 
 Key differences between `development` and `production` on default configuration: 
 
