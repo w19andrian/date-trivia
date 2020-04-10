@@ -1,3 +1,4 @@
 .helmignore
 venv-date-trivia
 venv-date-trivia/*
+date-trivia/values.yaml
