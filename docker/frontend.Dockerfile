@@ -3,6 +3,8 @@ FROM python:3.6-alpine3.10
 COPY requirements.txt /tmp/
 
 RUN \
+	apk update && \
+	apk add tzdata && \
 	pip install -r /tmp/requirements.txt && \
 	rm -rf /tmp/requirements.txt
 
@@ -12,6 +14,7 @@ ENV DEBUG FALSE
 ENV HOST "0.0.0.0"
 ENV PORT 5001
 ENV TRIVIA_ADDRESS http://127.0.0.1:5000
+ENV TZ "Asia/Jakarta"
 
 WORKDIR /opt/app
 
