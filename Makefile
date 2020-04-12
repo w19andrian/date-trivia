@@ -12,11 +12,9 @@ all: devel prod
 
 devel:
 	$(DOCKER) build -t ${PKG_NAME}-backend:dev \
-	-f docker/Dockerfile.backend . \
-	--no-cache
+	-f docker/backend.Dockerfile . 
 	$(DOCKER) build -t ${PKG_NAME}-frontend:dev \
-	-f docker/Dockerfile.frontend . \
-	--no-cache
+	-f docker/frontend.Dockerfile . 
 	$(HELM) install --name trivia-devel \
 					--namespace trivia-devel \
 					--set backend.image.repository="${PKG_NAME}-backend" \
@@ -28,11 +26,9 @@ devel:
 
 prod:
 	$(DOCKER) build -t ${PKG_NAME}-backend:${PKG_VERSION} \
-					-f docker/Dockerfile.backend . \
-					--no-cache
+					-f docker/backend.Dockerfile . 
 	$(DOCKER) build -t ${PKG_NAME}-frontend:${PKG_VERSION} \
-					-f docker/Dockerfile.frontend . \
-					--no-cache
+					-f docker/frontend.Dockerfile . 
 	$(HELM) install --name trivia \
 					--namespace trivia \
 					--set backend.image.repository="${PKG_NAME}-backend" \

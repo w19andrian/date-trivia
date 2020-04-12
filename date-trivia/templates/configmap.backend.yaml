@@ -10,3 +10,4 @@ data:
   DEBUG: "FALSE"
   HOST: "0.0.0.0"
   PORT: "{{  .Values.backend.ports.internalPort  }}"
+  TZ: "{{  .Values.timezone  }}"
